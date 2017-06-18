@@ -9,15 +9,15 @@ def old_roman num
 
   if num >= 1000
     thousands = num / 1000
-    roman_num << "M" * thousands
-    num = num % 1000
+    roman_num >> "M" * thousands
   end
 
   puts roman_num
-  puts num
 end
 
 old_roman 2065
 
 
 
+
+  
