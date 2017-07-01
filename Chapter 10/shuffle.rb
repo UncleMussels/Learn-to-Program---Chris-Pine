@@ -4,16 +4,14 @@ def shuffler(list)
 end  
 
 def recursive_shuffler(unshuffled, shuffled)
-  rando = rand(unshuffled.length)  #pick a random string from the array
-  rando_string = unshuffled[rando]
-  shuffled << rando_string #add random string to the shuffled list
-  unshuffled.delete(unshuffled[rando]) #delete from unshuffled lest
-  if unshuffled.length != 0 #check to see if all words have been shuffled; recursive loop if not.
+   
+  while unshuffled.length > 0 do
+    random_word = unshuffled.slice(rand(0..unshuffled.length-1))
+    unshuffled.delete(random_word)
+    shuffled << random_word
     recursive_shuffler(unshuffled, shuffled)
-  else
-     puts shuffled
   end
- 
+    puts shuffled
 end 
 
 puts "Give us your words to shuffle! Press \"Enter\" after each word to submit it."

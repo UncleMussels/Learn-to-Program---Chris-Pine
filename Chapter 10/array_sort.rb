@@ -11,10 +11,11 @@ words = []
 
 while true
   print "Word: "
-  word = gets.chomp
-  words.push word  
+  word = gets.chomp 
   if word == ""
     break
+  else
+    words.push word 
   end
 end
 
