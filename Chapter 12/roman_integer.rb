@@ -1,6 +1,11 @@
 def numeral_to_integer
     puts "Give us a year using roman numerals (M, D, C, V, X, or I) and I'll convert it to an integer!"
     roman = gets.chomp.downcase
+
+    if roman == ""
+        numeral_to_integer
+    end
+
     roman_array = roman.split("")
 
     numerals = { 'i' => 1,
@@ -22,8 +27,6 @@ def numeral_to_integer
         roman_length -= 1
       else 
         puts "Invalid letters! Try again."
-        roman_array = []
-        final_integer = 0
         numeral_to_integer
       end
     end
