@@ -13,16 +13,18 @@ class Die
   end
 
   def cheat(x)
-    if x > 6 || x < 1
-      puts "You may only set the die using numbers 1 - 6, cheater!"
-    else
+    if (1..6).include?(x)
       @number_rolled = x
       puts "Dice is now set to #{@number_rolled}"
+    else
+       puts "You may only set the die using numbers 1 - 6, cheater!"
     end
   end
 
 end
 
+
 die = Die.new
 puts "Dice is currently showing #{die.showing}"
 die.cheat(0)
+puts die.showing
